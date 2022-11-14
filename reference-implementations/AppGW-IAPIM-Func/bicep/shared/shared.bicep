@@ -72,7 +72,7 @@ module vm_devopswinvm './createvmwindows.bicep' = if (toLower(CICDAgentType)!='n
     accountName: accountName
     personalAccessToken: personalAccessToken
     CICDAgentType: CICDAgentType
-    deployAgent: true
+    deployAgent: false
   }
 }
 
