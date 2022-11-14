@@ -840,7 +840,7 @@
           },
           "variables": {
             "owner": "APIM Const Set",
-            "storageAccounts_saapimcsbackend_name": "[toLower(take(replace(format('stbknd{0}{1}{2}', parameters('workloadName'), parameters('environment'), parameters('location')), '-', ''), 24))]",
+            "storageAccounts_saapimcsbackend_name": "[toLower(take(replace(format('stsolais{0}{1}{2}', parameters('workloadName'), parameters('environment'), parameters('location')), '-', ''), 24))]",
             "storageAccounts_location": "[parameters('location')]",
             "storageAccounts_skuName": "Standard_LRS",
             "storageAccounts_kind": "StorageV2",
