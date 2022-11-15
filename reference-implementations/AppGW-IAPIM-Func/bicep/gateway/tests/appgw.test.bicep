@@ -1,7 +1,7 @@
 var workload =                      'example'
 var environment =                   'prod'
 var location =                      'southcentralus'
-var resourceSuffix =                '${workload}-${environment}-${location}-001'
+var resourceSuffix =                '${workload}-${environment}'
 
 var apimRG =                        'ES-AppGateway_RG'
 var appgw =                         'appgw-${resourceSuffix}'
