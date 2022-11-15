@@ -131,7 +131,7 @@ module shared './shared/shared.bicep' = {
   }
 }
 
-module apimModule 'apim/apim.bicep'  = {
+module apimModule './apim/apim.bicep'  = {
   name: 'apimDeploy'
   scope: resourceGroup(apimRG.name)
   params: {
@@ -145,7 +145,7 @@ module apimModule 'apim/apim.bicep'  = {
 }
 
 //Creation of private DNS zones
-module dnsZoneModule 'shared/dnszone.bicep'  = {
+module dnsZoneModule './shared/dnszone.bicep'  = {
   name: 'apimDnsZoneDeploy'
   scope: resourceGroup(sharedRG.name)
   dependsOn: [
@@ -159,7 +159,7 @@ module dnsZoneModule 'shared/dnszone.bicep'  = {
   }
 }
 
-module appgwModule 'gateway/appgw.bicep' = {
+module appgwModule './gateway/appgw.bicep' = {
   name: 'appgwDeploy'
   scope: resourceGroup(apimRG.name)
   dependsOn: [
