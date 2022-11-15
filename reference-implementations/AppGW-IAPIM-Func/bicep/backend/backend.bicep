@@ -34,7 +34,7 @@ var owner = 'APIM Const Set'
 // Azure Storage Sizing
 //
 // - name: must be globally unique
-var storageAccounts_saapimcsbackend_name  = toLower(take(replace('stsolais${workloadName}${environment}${location}', '-',''), 24))
+var storageAccounts_saapimcsbackend_name  = toLower(take(replace('sta${workloadName}${environment}', '-',''), 24))
 // - location
 var storageAccounts_location = location
 // - SKU name
@@ -50,16 +50,16 @@ var functionContentShareName = 'func-contents'
 //
 // - min TLS version
 var storageAccounts_minTLSVersion = 'TLS1_2'
-var privateEndpoint_storageaccount_queue_Name = 'pep-sa-queue-${workloadName}-${environment}-${location}'
-var privateEndpoint_storageaccount_blob_Name = 'pep-sa-blob-${workloadName}-${environment}-${location}'
-var privateEndpoint_storageaccount_file_Name = 'pep-sa-file-${workloadName}-${environment}-${location}'
-var privateEndpoint_storageaccount_table_Name = 'pep-sa-table-${workloadName}-${environment}-${location}'
+var privateEndpoint_storageaccount_queue_Name = 'pep-sa-queue-${workloadName}-${environment}'
+var privateEndpoint_storageaccount_blob_Name = 'pep-sa-blob-${workloadName}-${environment}'
+var privateEndpoint_storageaccount_file_Name = 'pep-sa-file-${workloadName}-${environment}'
+var privateEndpoint_storageaccount_table_Name = 'pep-sa-table-${workloadName}-${environment}'
 
 //
 // Azure Application Service Plan
 //
 // - name
-var serverfarms_appsvcplanAPIMCSBackend_name  = 'plan-be-${workloadName}-${environment}-${location}'
+var serverfarms_appsvcplanAPIMCSBackend_name  = 'plan-be-${workloadName}-${environment}'
 // - location
 var serverfarms_appsvcplanAPIMCSBackend_location  = location
 // Azure Application Service Plan sizing
@@ -75,12 +75,12 @@ var serverfarms_appsvcplanAPIMCSBackend_skuFamily  = 'Pv2' // dev - 'B'
 var serverfarms_appsvcplanAPIMCSBackend_skuCapacity  = 1
 
 
-var sites_funcappAPIMCSBackendMicroServiceA_name = 'func-code-be-${workloadName}-${environment}-${location}'
+var sites_funcappAPIMCSBackendMicroServiceA_name = 'func-code-be-${workloadName}-${environment}'
 var sites_funcappAPIMCSBackendMicroServiceA_location  = location
-var sites_funcappAPIMCSBackendMicroServiceA_siteHostname   = 'func-code-be-${workloadName}-${environment}-${location}.azurewebsites.net'
-var sites_funcappAPIMCSBackendMicroServiceA_repositoryHostname   = 'func-code-be-${workloadName}-${environment}-${location}.scm.azurewebsites.net'
-var sites_funcappAPIMCSBackendMicroServiceA_siteName   = 'funccodebe${workloadName}${environment}${location}'
-var privateEndpoint_funcappAPIMCSBackendMicroServiceA_name   = 'pep-func-code-be-${workloadName}-${environment}-${location}'
+var sites_funcappAPIMCSBackendMicroServiceA_siteHostname   = 'func-code-be-${workloadName}-${environment}.azurewebsites.net'
+var sites_funcappAPIMCSBackendMicroServiceA_repositoryHostname   = 'func-code-be-${workloadName}-${environment}.scm.azurewebsites.net'
+var sites_funcappAPIMCSBackendMicroServiceA_siteName   = 'funccodebe${workloadName}${environment}'
+var privateEndpoint_funcappAPIMCSBackendMicroServiceA_name   = 'pep-func-code-be-${workloadName}-${environment}'
 
 
 //
