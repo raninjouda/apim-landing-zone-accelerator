@@ -66,6 +66,7 @@ jobs:
             az deployment sub validate \
               --location ${{ fromJson(env.config).AZURE_LOCATION }} \
               --parameters workloadName=${{ fromJson(env.config).RESOURCE_NAME_PREFIX }} environment=${{ fromJson(env.config).ENVIRONMENT_TAG }} \
+              appGatewayFqdn=${{ secrets.FQDN }} \ certificatePassword=${{ secrets.CERTPW}} appGatewayCertType=${{ fromJson(env.config).CERT_TYPE }} \
               --template-file main.bicep
  
         # Deploy Bicep file, need to point parameters to the main.parameters.json location
@@ -78,3 +79,4 @@ jobs:
           template: ./reference-implementations/AppGW-IAPIM-Func/bicep/main.bicep
           parameters: > 
             workloadName=${{ fromJson(env.config).RESOURCE_NAME_PREFIX }} environment=${{ fromJson(env.config).ENVIRONMENT_TAG }} 
+            appGatewayFqdn=${{ secrets.FQDN }} certificatePassword=${{ secrets.CERTPW }} appGatewayCertType=${{ fromJson(env.config).CERT_TYPE }}
