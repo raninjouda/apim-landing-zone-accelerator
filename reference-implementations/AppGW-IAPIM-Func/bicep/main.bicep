@@ -36,15 +36,15 @@ param accountName string
 @secure()
 param personalAccessToken string
 
-@description('The FQDN for the Application Gateway. Example - api.contoso.com.')
-param appGatewayFqdn string
+//@description('The FQDN for the Application Gateway. Example - api.contoso.com.')
+//param appGatewayFqdn string
 
-@description('The password for the TLS certificate for the Application Gateway.  The pfx file needs to be copied to deployment/bicep/gateway/certs/appgw.pfx')
-@secure()
-param certificatePassword string
+//@description('The password for the TLS certificate for the Application Gateway.  The pfx file needs to be copied to deployment/bicep/gateway/certs/appgw.pfx')
+//@secure()
+//param certificatePassword string
 
-@description('Set to selfsigned if self signed certificates should be used for the Application Gateway. Set to custom and copy the pfx file to deployment/bicep/gateway/certs/appgw.pfx if custom certificates are to be used')
-param appGatewayCertType string
+//@description('Set to selfsigned if self signed certificates should be used for the Application Gateway. Set to custom and copy the pfx file to deployment/bicep/gateway/certs/appgw.pfx if custom certificates are to be used')
+//param appGatewayCertType string
 
 param location string = deployment().location
 
@@ -59,8 +59,8 @@ var backendResourceGroupName = 'rg-${resourceSuffix}'
 var apimResourceGroupName = 'rg-apim-${resourceSuffix}'
 
 // Resource Names
-var apimName = 'apim-${resourceSuffix}'
-var appGatewayName = 'appgw-${resourceSuffix}'
+//var apimName = 'apim-${resourceSuffix}'
+//var appGatewayName = 'appgw-${resourceSuffix}'
 
 
 resource networkingRG 'Microsoft.Resources/resourceGroups@2021-04-01' = {
